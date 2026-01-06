@@ -1,42 +1,165 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>QR Code Generator | Code Traversal</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GREENPAY – Recycle & Earn</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-    <div class="box">
-        <div class="qr-header">
-            <h1>Generate QR Code</h1>
-            <input type="text" placeholder="Type your text or URL" id="qr-text">
-            <div>
-            <label for="sizes">Select Size:</label>
-            <select id="sizes">
-                <option value="100">100x100</option>
-                <option value="200">200x200</option>
-                <option value="300">300x300</option>
-                <option value="400">400x400</option>
-                <option value="500">500x500</option>
-                <option value="600">600x600</option>
-                <option value="700">700x700</option>
-                <option value="800">800x800</option>
-                <option value="900">900x900</option>
-                <option value="1000">1000x1000</option>
-            </select>
-        </div>
-        </div>
-        <div class="qr-body"></div>
-        <div class="qr-footer">
-            <a href="" id="generateBtn">Generate</a>
-            <a href="" id="downloadBtn" download="QR_Code.png">Download</a>
-        </div>
-    </div>
 
-    <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <!-- Sticky Navbar -->
+  <nav class="navbar" role="navigation">
+    <div class="container nav-content">
+      <div class="nav-left">
+        <img src="Logo.png" alt="GREENPAY Logo" class="logo" />
+        <span class="brand-title">GREENPAY</span>
+      </div>
+      <div class="language-switcher">
+        <label for="lang-select" class="visually-hidden">Select Language</label>
+        <select id="lang-select" name="language">
+          <option value="en" selected>🌐 English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="ta">தமிழ்</option>
+          <option value="bn">বাংলা</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" role="banner">
+    <div class="container hero-content">
+      <h1>Recycle Smart. Earn Instantly.</h1>
+      <p>GREENPAY rewards you for every bottle you recycle. Get cashback, coupons, points &amp; more — straight to your app.</p>
+      <div class="cta-buttons" role="region" aria-label="Call to action buttons">
+        <a href="#" class="btn btn-primary" aria-label="Download GREENPAY app on Android">📲 Download on Android</a>
+        <a href="#" class="btn btn-secondary" aria-disabled="true" tabindex="-1">🍏 Coming Soon on iOS</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- How It Works -->
+  <section class="how-it-works" aria-labelledby="how-it-works-title">
+    <h2 id="how-it-works-title">How GREENPAY Works</h2>
+    <div class="steps">
+      <article class="step" data-aos="fade-up">
+        <h3>1. Insert Bottle</h3>
+        <p>Drop your plastic bottle into any nearby RVM (Reverse Vending Machine).</p>
+      </article>
+      <article class="step" data-aos="fade-up" data-aos-delay="100">
+        <h3>2. Scan QR Code</h3>
+        <p>Use GREENPAY to scan the machine's unique code to claim your reward.</p>
+      </article>
+      <article class="step" data-aos="fade-up" data-aos-delay="200">
+        <h3>3. Get Rewards</h3>
+        <p>Receive cashback, coupons, or points instantly in your app.</p>
+      </article>
+      <article class="step" data-aos="fade-up" data-aos-delay="300">
+        <h3>4. Track &amp; Earn</h3>
+        <p>View your eco-points, earn badges, and compete on the leaderboard.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" aria-labelledby="features-title">
+    <h2 id="features-title">Top Features</h2>
+    <div class="feature-cards">
+      <div class="feature-card" data-aos="zoom-in">
+        <h3>💸 Instant Cashback</h3>
+        <p>Get paid instantly via UPI or Paytm.</p>
+      </div>
+      <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+        <h3>🎁 Coupon Wallet</h3>
+        <p>Store and redeem coupons from partner brands.</p>
+      </div>
+      <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+        <h3>🗺️ RVM Locator</h3>
+        <p>Find nearby recycling stations easily.</p>
+      </div>
+      <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+        <h3>🌍 Multilingual</h3>
+        <p>Available in English and regional languages.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="social-proof" aria-labelledby="proof-title">
+    <h2 id="proof-title">GREENPAY Impact</h2>
+    <div class="proof-stats">
+      <div class="stat" data-aos="fade-up">
+        <h3>3M+</h3>
+        <p>Bottles Recycled</p>
+      </div>
+      <div class="stat" data-aos="fade-up" data-aos-delay="100">
+        <h3>₹15 Cr+</h3>
+        <p>Cashback Given</p>
+      </div>
+      <div class="stat" data-aos="fade-up" data-aos-delay="200">
+        <h3>150K+</h3>
+        <p>Happy Users</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" aria-labelledby="testimonials-title">
+    <h2 id="testimonials-title">What Users Are Saying</h2>
+    <div class="testimonial-cards">
+      <blockquote class="testimonial" data-aos="fade-up">
+        <p>“I love getting paid to recycle. GREENPAY makes it fun!”</p>
+        <footer>— Riya, Mumbai</footer>
+      </blockquote>
+      <blockquote class="testimonial" data-aos="fade-up" data-aos-delay="100">
+        <p>“Found 3 machines near me and got instant cashback. Amazing app!”</p>
+        <footer>— Arjun, Bengaluru</footer>
+      </blockquote>
+      <blockquote class="testimonial" data-aos="fade-up" data-aos-delay="200">
+        <p>“Using GREENPAY in my native language made it so easy.”</p>
+        <footer>— Kavitha, Chennai</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="newsletter" aria-labelledby="newsletter-title">
+    <h2 id="newsletter-title">Stay Updated</h2>
+    <p>Join our newsletter for updates on rewards, new machines, and more.</p>
+    <form class="newsletter-form" data-aos="fade-up">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Brand Partners -->
+  <section class="brand-partners" aria-labelledby="brand-partners-title">
+    <h2 id="brand-partners-title">Our Brand Partners</h2>
+    <div class="partners">
+      <div class="partner" tabindex="0">🥤 BeverageCo</div>
+      <div class="partner" tabindex="0">🍜 FoodFast</div>
+      <div class="partner" tabindex="0">🧼 EcoMart</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 GREENPAY. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+  </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
 </body>
 </html>
